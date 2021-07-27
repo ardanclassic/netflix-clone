@@ -23,15 +23,31 @@ export default function Header({ bg = true, children, ...restProps }) {
   const location = useLocation();
   const { innerWidth: width } = window;
 
-  return bg ? (
-    <Background data-testid="header-bg" {...restProps}>
-      {location.pathname !== "/browse" && width < 1100 && (
+  const ShowBackground = () => {
+    if (width > 1100) {
+      return (
         <img
           className="header-bg"
           src={`/images/misc/${restProps.src}.jpg`}
           alt="bg"
         />
-      )}
+      );
+    } else if (width < 1100 && location.pathname !== "/browse") {
+      return (
+        <img
+          className="header-bg"
+          src={`/images/misc/${restProps.src}.jpg`}
+          alt="bg"
+        />
+      );
+    } else {
+      return null;
+    }
+  };
+
+  return bg ? (
+    <Background data-testid="header-bg" {...restProps}>
+      <ShowBackground />
       {children}
     </Background>
   ) : (

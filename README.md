@@ -6,6 +6,7 @@ This application was built using React (Custom Hooks, Context), Firebase & Style
 
 ![image](https://user-images.githubusercontent.com/41061962/127149947-a43ea5da-39d6-4da1-a074-f42e107bdb6b.png)
 
+## Live Site: [Netflix Clone](https://netflix-id.netlify.app/)
 
 ### Tech Stacks
  - React JS (using Create React App)
